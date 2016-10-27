@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		
+	</head>
+	<!-- data-main attribute tells require.js to load
+             scripts/main.js after require.js loads. -->
+	<script data-main="js/main" src="js/require.js"></script> 
+	<body>
+		
+	</body>
+	
+	<script type="text/javascript">
+		requirejs.config({
+		    //By default load any module IDs from js/lib
+		    baseUrl: 'js',
+		    //except, if the module ID starts with "app",
+		    //load it from the js/app directory. paths
+		    //config is relative to the baseUrl, and
+		    //never includes a ".js" extension since
+		    //the paths config could be for a directory.
+		    paths: {
+		        m1: 'mdl1'  //baseUrl/mdl1
+		    }
+		});
+		
+		require(["m1"],function(m1){
+			m1.func1();
+		});
+		
+		
+	</script>
+	
+</html>
